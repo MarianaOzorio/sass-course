@@ -1,0 +1,51 @@
+.footer h3 {
+  font-style: italic; }
+
+.nav {
+  background-color: #b8f394; }
+  .nav ul li {
+    list-style: none; }
+  .nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: gray; }
+    .nav a:hover {
+      color: royalblue; }
+
+/* MIXIN */
+/*
+
+@mixin headingStyles($fontSize: 35px) {
+    font-size: $fontSize;
+    color: $color-secondary;
+    text-align: center;
+}
+
+@mixin transition($param...) {
+    transition: $param;
+}
+
+.banner h1 {
+    @include headingStyles($font-lg);
+}
+
+.footer h3 {
+    @include headingStyles;
+    @include transition(color .5s, background-color 1s);
+
+    &:hover {
+        color: $color-tertiary;
+        background-color: $color-primary;
+    }
+}
+
+*/
+/* EXTEND + PLACEHOLDER SELECTORS*/
+h1, .footer h3 {
+  color: #b8f394;
+  font-size: 40px;
+  background-color: gray;
+  text-align: center; }
+
+h1:hover, .footer h3:hover {
+  background-color: #7facff; }
