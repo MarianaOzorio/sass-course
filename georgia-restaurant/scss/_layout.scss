@@ -16,3 +16,39 @@
         @include centering(60%);
     }
 }
+
+.about-us {
+    height: 90vh;
+    display: flex;
+    padding: 60px;
+
+    &-contents {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+
+        .stars {
+            margin: 30px 0;        
+        }
+
+        .star {
+            font-size: 0.9em;
+            color: $color-primary;
+        }
+
+        .description {
+            font-family: $font-josefinSans;
+            font-size: 1.5em;
+            font-style: italic;
+            color: $color-secondary;
+            text-align: justify;
+
+            &::first-letter {
+                padding-left: 50px;
+            }
+        }
+    }
+}
