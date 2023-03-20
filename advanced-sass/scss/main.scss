@@ -1,0 +1,101 @@
+//-------DATA TYPES-------//
+
+// NUMBERS
+
+.numbers {
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 20px; //rem, em, %
+}
+
+//STRINGS
+
+.strings {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+//COLORS
+
+.colors {
+    color: red;
+    background-color: #ff0000;
+    border-color: rgb(255, 0, 0); //rgba (255, 0, 0, .5)
+    outline-color: hsl(0, 100%, 50%);
+}
+
+//LISTS
+
+.lists {
+    margin: 10px 15px 5px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid red;
+}
+
+//MAPS
+
+$colors: (
+    1: red,
+    2: green,
+    3: blue,
+    4: orange
+);
+
+h3 {
+    color: map-get($colors, 1);
+    background-color: map-get($colors, 2);
+}
+
+//BOOLEANS
+//True, False
+
+//NULL
+
+//------INTERPOLATION------//
+
+$b: "border";
+$c: "color";
+
+h2 {
+    box-sizing: #{$b}-box;
+    #{$b}: 1px solid blue;
+    #{$c}: red;
+    background-#{$c}: green;
+}
+
+//------FOR LOOP------//
+
+@for $i from 1 through 4 {
+    .paragraph-#{$i} {
+        background-color: map-get($colors, $i);
+    }
+}
+
+//------EACH LOOP------//
+
+$each-colors: red blue green orange;
+
+@each $each-color in $each-colors {
+    .paragraph-#{$each-color} {
+        background-color: $each-color;
+    }
+}
+
+//------IF DIRECTIVE------//
+
+@mixin headingSize($size) {
+    @if($size == large) {
+        font-size: 45px;
+    } @else if($size == medium) {
+        font-size: 30px;
+    } @else {
+        font-size: 15px;
+    }
+}
+
+h1 {
+    @include headingSize(large);
+}
+
+
